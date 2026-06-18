@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* الخطوط */
+  * {
+    font-family: 'Tajawal', 'Noto Sans Arabic', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* تحديد الاتجاه ديناميكياً */
+  [dir="rtl"] body {
+    direction: rtl;
+    text-align: right;
+    font-family: 'Tajawal', 'Noto Sans Arabic', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  [dir="ltr"] body {
+    direction: ltr;
+    text-align: left;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  /* تحسين عرض النصوص العربية */
+  .font-arabic {
+    font-family: 'Noto Sans Arabic', 'Tajawal', sans-serif;
+  }
+  
+  .font-tajawal {
+    font-family: 'Tajawal', 'Noto Sans Arabic', sans-serif;
+  }
+
+  /* تحسين التباعد للعربية */
+  [dir="rtl"] .leading-normal {
+    line-height: 1.8;
+  }
+  
+  [dir="rtl"] .leading-relaxed {
+    line-height: 1.75;
+  }
+  
+  [dir="rtl"] .leading-loose {
+    line-height: 2;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-6 rounded-lg transition duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-600 hover:bg-gray-700 text-white font-medium py-3 px-6 rounded-lg transition duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2;
+  }
+  
+  .form-input {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-lg;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-lg p-6 border border-gray-100;
+  }
+
+  /* تحسين العناوين */
+  [dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4, [dir="rtl"] h5, [dir="rtl"] h6 {
+    font-family: 'Noto Sans Arabic', 'Tajawal', sans-serif;
+    font-weight: 700;
+  }
+
+  [dir="ltr"] h1, [dir="ltr"] h2, [dir="ltr"] h3, [dir="ltr"] h4, [dir="ltr"] h5, [dir="ltr"] h6 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+  }
+
+  /* تحسين النصوص الطويلة */
+  [dir="rtl"] p, [dir="rtl"] span, [dir="rtl"] div {
+    font-family: 'Tajawal', 'Noto Sans Arabic', sans-serif;
+    line-height: 1.8;
+  }
+
+  [dir="ltr"] p, [dir="ltr"] span, [dir="ltr"] div {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+  }
+}
+
+/* تخصيص شريط التمرير */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* تحسين الظلال للعناوين العربية */
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* تحسين التباعد للحروف العربية */
+.letter-spacing-normal {
+  letter-spacing: 0;
+}
+
+/* تحسين العرض للأزرار */
+.btn-arabic {
+  padding: 12px 24px;
+  font-weight: 500;
+}
+
+[dir="rtl"] .btn-arabic {
+  font-family: 'Tajawal', sans-serif;
+}
+
+[dir="ltr"] .btn-arabic {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* تحسين Flexbox للاتجاهين */
+[dir="rtl"] .flex-row-reverse {
+  flex-direction: row;
+}
+
+[dir="ltr"] .flex-row-reverse {
+  flex-direction: row-reverse;
+}

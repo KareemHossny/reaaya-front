@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://re3aya-backend.vercel.app/api';
+const BASE_URL = 'https://reaaya-back.vercel.app/api';
 
 const api = axios.create({
   baseURL: BASE_URL,

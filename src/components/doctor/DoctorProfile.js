@@ -185,7 +185,7 @@ const DoctorProfile = () => {
   const getImageUrl = (imagePath) => {
     if (!imagePath) return null;
     if (imagePath.startsWith('http')) return imagePath;
-    const baseUrl = 'https://re3aya-backend.vercel.app';
+    const baseUrl = 'https://reaaya-back.vercel.app';
     const cleanPath = imagePath.startsWith('/') ? imagePath.substring(1) : imagePath;
     return `${baseUrl}/${cleanPath}`;
   };

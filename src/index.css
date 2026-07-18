@@ -144,15 +144,6 @@
   font-family: 'Segoe UI', sans-serif;
 }
 
-/* تحسين Flexbox للاتجاهين */
-[dir="rtl"] .flex-row-reverse {
-  flex-direction: row;
-}
-
-[dir="ltr"] .flex-row-reverse {
-  flex-direction: row-reverse;
-}
-
 /* فئة دعم الاتجاه المستخدمة في بعض المكونات */
 .rtl-support {
   width: 100%;

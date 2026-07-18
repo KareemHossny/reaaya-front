@@ -1716,10 +1716,21 @@ i18n
     }
   });
 
-// تحديث اتجاه الصفحة عند تغيير اللغة
-i18n.on('languageChanged', (lng) => {
-  document.documentElement.dir = lng === 'ar' ? 'rtl' : 'ltr';
-  document.documentElement.lang = lng;
-});
+// تحديث اتجاه الصفحة واللغة
+const applyDirection = (lng) => {
+  const isArabic = (lng || '').startsWith('ar');
+  document.documentElement.dir = isArabic ? 'rtl' : 'ltr';
+  document.documentElement.lang = isArabic ? 'ar' : 'en';
+};
+
+// تطبيق الاتجاه الصحيح عند أول تحميل (حسب اللغة المحفوظة/المكتشفة)
+if (i18n.isInitialized) {
+  applyDirection(i18n.language);
+} else {
+  i18n.on('initialized', () => applyDirection(i18n.language));
+}
+
+// تحديث الاتجاه عند تغيير اللغة
+i18n.on('languageChanged', applyDirection);
 
 export default i18n;

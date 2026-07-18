@@ -96,7 +96,7 @@ const Header = () => {
             <div className="flex items-center">
               <button
                 onClick={() => changeLanguage(i18n.language === 'ar' ? 'en' : 'ar')}
-                className="flex items-center space-x-2 text-gray-600 hover:text-primary-600 transition-colors p-2 rounded-lg hover:bg-gray-50"
+                className={`flex items-center gap-2 text-gray-600 hover:text-primary-600 transition-colors p-2 rounded-lg hover:bg-gray-50`}
               >
                 <LanguageIcon className="w-5 h-5" />
                 <span className="text-sm font-medium">{i18n.language === 'ar' ? 'EN' : 'العربية'}</span>
@@ -176,7 +176,7 @@ const Header = () => {
             <div className="flex justify-center mb-4">
               <button
                 onClick={() => changeLanguage(i18n.language === 'ar' ? 'en' : 'ar')}
-                className="flex items-center space-x-2 text-gray-600 hover:text-primary-600 transition-colors px-4 py-3 rounded-lg bg-gray-50 w-full justify-center"
+                className="flex items-center gap-2 text-gray-600 hover:text-primary-600 transition-colors px-4 py-3 rounded-lg bg-gray-50 w-full justify-center"
               >
                 <LanguageIcon className="w-5 h-5" />
                 <span className="text-sm font-medium">

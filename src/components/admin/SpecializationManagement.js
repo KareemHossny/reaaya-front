@@ -346,7 +346,7 @@ const SpecializationManagement = () => {
                 {specialization.image && (
                   <button
                     onClick={() => handleDeleteImage(specialization._id)}
-                    className="absolute top-2 right-2 bg-red-500 text-white p-1 rounded-full hover:bg-red-600 transition-colors"
+                    className={`absolute top-2 ${isRTL ? 'left-2' : 'right-2'} bg-red-500 text-white p-1 rounded-full hover:bg-red-600 transition-colors`}
                     title={t('delete_image')}
                   >
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

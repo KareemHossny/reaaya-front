@@ -211,23 +211,23 @@ const DoctorList = () => {
         <form onSubmit={handleSearch} className="flex flex-col md:flex-row gap-4 items-center">
           {/* Search Bar */}
           <div className="flex-1 w-full relative">
-            <MagnifyingGlassIcon className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+            <MagnifyingGlassIcon className={`absolute ${isRTL ? 'right-4' : 'left-4'} top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400`} />
             <input
               type="text"
               placeholder={t('search_doctor_placeholder')}
               value={searchTerm}
               onChange={e => setSearchTerm(e.target.value)}
-              className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 outline-none transition-all"
+              className={`w-full py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 outline-none transition-all ${isRTL ? 'pr-12 pl-4 text-right' : 'pl-12 pr-4 text-left'}`}
               aria-label={t('search_doctor_placeholder')}
             />
           </div>
           {/* Specialization Filter */}
           <div className="relative w-full md:w-60">
-            <FunnelIcon className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+            <FunnelIcon className={`absolute ${isRTL ? 'right-4' : 'left-4'} top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400`} />
             <select
               value={selectedSpecialization}
               onChange={e => setSelectedSpecialization(e.target.value)}
-              className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 appearance-none outline-none"
+              className={`w-full py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 appearance-none outline-none ${isRTL ? 'pr-12 pl-4 text-right' : 'pl-12 pr-4 text-left'}`}
               aria-label={t('all_specialties')}
             >
               <option value="">{t('all_specialties')}</option>
@@ -243,7 +243,7 @@ const DoctorList = () => {
             <select
               value={sortBy}
               onChange={e => setSortBy(e.target.value)}
-              className="w-full pl-4 pr-10 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 outline-none appearance-none"
+              className={`w-full py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 outline-none appearance-none ${isRTL ? 'pr-4 pl-10 text-right' : 'pl-4 pr-10 text-left'}`}
               aria-label={t('sort_by_rating')}
             >
               <option value="rating">{t('sort_by_rating')}</option>

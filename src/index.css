@@ -7,6 +7,24 @@
   * {
     font-family: 'Tajawal', 'Noto Sans Arabic', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
+
+  /* منع التمرير الأفقي على كل الشاشات */
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* صور ووسائط مرنة لا تتجاوز حاوياتها */
+  img, video, canvas, svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* كسر الكلمات الطويلة والروابط لتجنب تجاوز الحاوية */
+  p, span, a, h1, h2, h3, h4, h5, h6, li, td, th, label {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
   
   /* تحديد الاتجاه ديناميكياً */
   [dir="rtl"] body {
@@ -133,4 +151,29 @@
 
 [dir="ltr"] .flex-row-reverse {
   flex-direction: row-reverse;
+}
+
+/* فئة دعم الاتجاه المستخدمة في بعض المكونات */
+.rtl-support {
+  width: 100%;
+}
+[dir="rtl"] .rtl-support {
+  direction: rtl;
+  text-align: right;
+}
+[dir="ltr"] .rtl-support {
+  direction: ltr;
+  text-align: left;
+}
+
+/* منع الجداول والحاويات من كسر التخطيط على الجوال */
+.overflow-x-auto {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* تصغير أحجام العناوين الكبيرة تلقائياً على الشاشات الصغيرة */
+@media (max-width: 480px) {
+  h1 { font-size: clamp(1.5rem, 7vw, 2.25rem); }
+  h2 { font-size: clamp(1.25rem, 6vw, 1.875rem); }
+  h3 { font-size: clamp(1.1rem, 5vw, 1.5rem); }
 }

@@ -179,7 +179,7 @@ const DoctorSchedule = () => {
                 style={{ transition: 'transform 0.2s' }}
               ></div>
             </div>
-            <span className={`ml-2 sm:ml-3 font-bold text-sm sm:text-base ${isWorkingDay ? 'text-green-600' : 'text-red-600'}`}>
+            <span className={`${isRTL ? 'mr-2 sm:mr-3' : 'ml-2 sm:ml-3'} font-bold text-sm sm:text-base ${isWorkingDay ? 'text-green-600' : 'text-red-600'}`}>
               {isWorkingDay ? t('active') : t('day_off')}
             </span>
           </label>
@@ -257,7 +257,7 @@ const DoctorSchedule = () => {
                     <span className="font-bold">{formatTime(time)}</span>
                     <button
                       onClick={() => toggleTimeSlot(time)}
-                      className="text-red-500 hover:text-red-700 ml-1 transition"
+                      className="text-red-500 hover:text-red-700 transition"
                       aria-label={`${t('remove')} ${formatTime(time)}`}
                       tabIndex={0}
                     >

@@ -17,7 +17,10 @@ const Header = () => {
   };
 
   const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
+    if (i18n.language === lng) return;
+    i18n.changeLanguage(lng).then(() => {
+      window.location.reload();
+    });
   };
 
   const getRoleText = (role) => {
